@@ -1,4 +1,4 @@
-﻿namespace Aula3
+﻿namespace Aula4
 {
     partial class FormPrincipal
     {
@@ -68,12 +68,14 @@
             cadastroDeProfessoresToolStripMenuItem.Name = "cadastroDeProfessoresToolStripMenuItem";
             cadastroDeProfessoresToolStripMenuItem.Size = new Size(251, 26);
             cadastroDeProfessoresToolStripMenuItem.Text = "Cadastro de Professores";
+            cadastroDeProfessoresToolStripMenuItem.Click += cadastroDeProfessoresToolStripMenuItem_Click;
             // 
             // cadastroDeCursosToolStripMenuItem
             // 
             cadastroDeCursosToolStripMenuItem.Name = "cadastroDeCursosToolStripMenuItem";
             cadastroDeCursosToolStripMenuItem.Size = new Size(251, 26);
             cadastroDeCursosToolStripMenuItem.Text = "Cadastro de Cursos";
+            cadastroDeCursosToolStripMenuItem.Click += cadastroDeCursosToolStripMenuItem_Click;
             // 
             // relatoriosToolStripMenuItem
             // 

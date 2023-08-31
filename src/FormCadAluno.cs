@@ -3,7 +3,7 @@ using ReaLTaiizor.Controls;
 using ReaLTaiizor.Forms;
 using System.Data;
 
-namespace Aula3
+namespace Aula4
 {
     public partial class FormCadAluno : MaterialForm
     {
@@ -31,30 +31,41 @@ namespace Aula3
         {
             var con = new MySqlConnection(cs);
             con.Open();
+            var sql = "";
 
             if (!isAlteracao)
             {
-                var sql = "INSERT INTO aluno" +
+                sql = "INSERT INTO aluno" +
                           "(matricula, dt_nascimento, nome, endereco, bairro, cidade, estado, senha)" +
                           "VALUES" +
                           "(@matricula, @dt_nascimento, @nome,  @endereco, @bairro, @cidade, @estado, @senha)";
-                var cmd = new MySqlCommand(sql, con);
-                cmd.Parameters.AddWithValue("@matricula", matricula.Text);
-                DateTime.TryParse(dtNascimento.Text, out var dataNascimento);
-                cmd.Parameters.AddWithValue("@dt_nascimento", dataNascimento);
-                cmd.Parameters.AddWithValue("@nome", nome.Text);
-                cmd.Parameters.AddWithValue("@endereco", endereco.Text);
-                cmd.Parameters.AddWithValue("@bairro", bairro.Text);
-                cmd.Parameters.AddWithValue("@cidade", cidade.Text);
-                cmd.Parameters.AddWithValue("@estado", cbEstado.Text);
-                cmd.Parameters.AddWithValue("@senha", senha.Text);
-                cmd.Prepare();
-                cmd.ExecuteNonQuery();
             }
             else
             {
+                sql = "UPDATE aluno set matricula = @matricula, " +
+                          "dt_nascimento = @dt_nascimento, " +
+                          "nome = @nome, " + "endereco = @endereco, " +
+                          "bairro = @bairro, " + "cidade = @cidade, " +
+                          "estado = @estado, " + "senha = @senha " +
+                          " WHERE id = @id";
 
             }
+            var cmd = new MySqlCommand(sql, con);
+            cmd.Parameters.AddWithValue("@matricula", matricula.Text);
+            DateTime.TryParse(dtNascimento.Text, out var dataNascimento);
+            cmd.Parameters.AddWithValue("@dt_nascimento", dataNascimento);
+            cmd.Parameters.AddWithValue("@nome", nome.Text);
+            cmd.Parameters.AddWithValue("@endereco", endereco.Text);
+            cmd.Parameters.AddWithValue("@bairro", bairro.Text);
+            cmd.Parameters.AddWithValue("@cidade", cidade.Text);
+            cmd.Parameters.AddWithValue("@estado", cbEstado.Text);
+            cmd.Parameters.AddWithValue("@senha", senha.Text);
+            if (isAlteracao)
+            {
+                cmd.Parameters.AddWithValue("@id", id.Text);
+            }
+            cmd.Prepare();
+            cmd.ExecuteNonQuery();
             LimparCampos();
 
         }
@@ -184,65 +195,57 @@ namespace Aula3
 
         private void Editar()
         {
-            /*
-            if (lVAlunos.SelectedItems.Count > 0)
+
+            if (dataGridView.SelectedRows.Count > 0)
             {
-                indexSelecionado = lVAlunos.SelectedItems[0].Index;
                 isAlteracao = true;
-                var item = lVAlunos.SelectedItems[0];
-                matricula.Text = item.SubItems[0].Text;
-                dtNascimento.Text = item.SubItems[1].Text;
-                nome.Text = item.SubItems[2].Text;
-                endereco.Text = item.SubItems[3].Text;
-                bairro.Text = item.SubItems[4].Text;
-                cidade.Text = item.SubItems[5].Text;
-                cbEstado.Text = item.SubItems[6].Text;
-                senha.Text = item.SubItems[7].Text;
+                var linha = dataGridView.SelectedRows[0];
+                id.Text = linha.Cells["id"].Value.ToString();
+                matricula.Text = linha.Cells["matricula"].Value.ToString();
+                dtNascimento.Text = linha.Cells["dt_nascimento"].Value.ToString();
+                nome.Text = linha.Cells["nome"].Value.ToString();
+                endereco.Text = linha.Cells["endereco"].Value.ToString();
+                bairro.Text = linha.Cells["bairro"].Value.ToString();
+                cidade.Text = linha.Cells["cidade"].Value.ToString();
+                cbEstado.Text = linha.Cells["estado"].Value.ToString();
+                senha.Text = linha.Cells["senha"].Value.ToString();
                 TabControl1.SelectedIndex = 0;
                 matricula.Focus();
             }
             else
             {
                 MessageBox.Show("Selecionar algum aluno!", "IFSP", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }*/
+            }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            /*
-            if (lVAlunos.SelectedIndices.Count > 0)
+
+            if (dataGridView.SelectedRows.Count > 0)
             {
                 if (MessageBox.Show("Deseja realmente deletar? ", "IFSP", MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    indexSelecionado = lVAlunos.SelectedItems[0].Index;
-                    Deletar();
-                    carrega_listView();
+                    int id = (int)dataGridView.SelectedRows[0].Cells[0].Value;
+                    Deletar(id);
+                    carrega_Grid();
                 }
             }
             else
             {
                 MessageBox.Show("Selecione algum aluno!", "IFSP", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            */
         }
 
-        private void Deletar()
-        {   /*
-            var file = File.ReadAllLines(alunosFileName).ToList();
-            file.RemoveAt(indexSelecionado);
-            File.WriteAllLines(alunosFileName, file);
-            */
-        }
-
-        private void lVAlunos_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void Deletar(int id)
         {
-            Editar();
-        }
-
-        private void lVAlunos_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
-        {
-            e.DrawDefault = true;
+            var con = new MySqlConnection(cs);
+            con.Open();
+            var sql = "DELETE FROM ALUNO WHERE id = @id";
+            var cmd = new MySqlCommand(sql, con);
+            cmd.Parameters.AddWithValue("@id", id.ToString());
+            cmd.Prepare();
+            cmd.ExecuteNonQuery();
         }
     }
 }

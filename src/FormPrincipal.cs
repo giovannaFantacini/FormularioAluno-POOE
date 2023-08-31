@@ -1,6 +1,6 @@
 using ReaLTaiizor.Forms;
 
-namespace Aula3
+namespace Aula4
 {
     public partial class FormPrincipal : MaterialForm
     {
@@ -23,6 +23,21 @@ namespace Aula3
             {
                 e.Cancel = true;
             }
+        }
+
+        private void cadastroDeProfessoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCadProfessor formCadProfessor = new FormCadProfessor();
+            formCadProfessor.MdiParent = this;
+            formCadProfessor.Show();
+
+        }
+
+        private void cadastroDeCursosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCadCurso formCadCurso = new FormCadCurso();
+            formCadCurso.MdiParent = this;
+            formCadCurso.Show();
         }
     }
 }

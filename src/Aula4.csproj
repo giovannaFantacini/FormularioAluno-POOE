@@ -14,6 +14,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="FormCadCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormCadProfessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
