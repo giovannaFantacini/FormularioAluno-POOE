@@ -1,11 +1,24 @@
 
 # Projeto Formulário
 
-### O objetivo do projeto é criar um sistema de cadastro de alunos, esse sistema contem as seguintes funcionalidades: 
+### O objetivo do projeto é criar um sistema de cadastro de alunos, cadastro de professor e cadastro de cursos, além dessas funcionalidades, também é possível gerar relatórios com filtros para cada uma das entidades.
+### O Cadastro do aluno contem as seguintes funcionalidades: 
 
  - Inserir novo aluno
  - Alterar o cadastro de um aluno
- - Gerar relatório de todos os alunos cadastrados 
+ - Gerar relatório de todos os alunos cadastrados
+
+### O Cadastro do professor contem as seguintes funcionalidades: 
+
+ - Inserir novo professor
+ - Alterar o cadastro de um professor
+ - Gerar relatório de todos os professores cadastrados
+
+### O Cadastro do curso contem as seguintes funcionalidades: 
+
+ - Inserir novo curso
+ - Alterar o curso
+ - Gerar relatório de todos os cursos cadastrados 
 
 ### Para todas essas funcionalidades o projeto usa um banco de dados local MySQL 
 
