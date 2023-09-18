@@ -36,6 +36,8 @@
             cadastroDeCursosToolStripMenuItem = new ToolStripMenuItem();
             relatoriosToolStripMenuItem = new ToolStripMenuItem();
             relatorioDeAlunosToolStripMenuItem = new ToolStripMenuItem();
+            relatorioDeProfessoresToolStripMenuItem = new ToolStripMenuItem();
+            relatorioDeCursosToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -79,7 +81,7 @@
             // 
             // relatoriosToolStripMenuItem
             // 
-            relatoriosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { relatorioDeAlunosToolStripMenuItem });
+            relatoriosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { relatorioDeAlunosToolStripMenuItem, relatorioDeProfessoresToolStripMenuItem, relatorioDeCursosToolStripMenuItem });
             relatoriosToolStripMenuItem.Name = "relatoriosToolStripMenuItem";
             relatoriosToolStripMenuItem.Size = new Size(90, 24);
             relatoriosToolStripMenuItem.Text = "Relatorios";
@@ -87,8 +89,23 @@
             // relatorioDeAlunosToolStripMenuItem
             // 
             relatorioDeAlunosToolStripMenuItem.Name = "relatorioDeAlunosToolStripMenuItem";
-            relatorioDeAlunosToolStripMenuItem.Size = new Size(223, 26);
+            relatorioDeAlunosToolStripMenuItem.Size = new Size(253, 26);
             relatorioDeAlunosToolStripMenuItem.Text = "Relatorio de Alunos";
+            relatorioDeAlunosToolStripMenuItem.Click += relatorioDeAlunosToolStripMenuItem_Click;
+            // 
+            // relatorioDeProfessoresToolStripMenuItem
+            // 
+            relatorioDeProfessoresToolStripMenuItem.Name = "relatorioDeProfessoresToolStripMenuItem";
+            relatorioDeProfessoresToolStripMenuItem.Size = new Size(253, 26);
+            relatorioDeProfessoresToolStripMenuItem.Text = "Relatorio de Professores";
+            relatorioDeProfessoresToolStripMenuItem.Click += relatorioDeProfessoresToolStripMenuItem_Click;
+            // 
+            // relatorioDeCursosToolStripMenuItem
+            // 
+            relatorioDeCursosToolStripMenuItem.Name = "relatorioDeCursosToolStripMenuItem";
+            relatorioDeCursosToolStripMenuItem.Size = new Size(253, 26);
+            relatorioDeCursosToolStripMenuItem.Text = "Relatorio de Cursos";
+            relatorioDeCursosToolStripMenuItem.Click += relatorioDeCursosToolStripMenuItem_Click;
             // 
             // FormPrincipal
             // 
@@ -124,5 +141,7 @@
         private ToolStripMenuItem cadastroDeCursosToolStripMenuItem;
         private ToolStripMenuItem relatoriosToolStripMenuItem;
         private ToolStripMenuItem relatorioDeAlunosToolStripMenuItem;
+        private ToolStripMenuItem relatorioDeProfessoresToolStripMenuItem;
+        private ToolStripMenuItem relatorioDeCursosToolStripMenuItem;
     }
 }

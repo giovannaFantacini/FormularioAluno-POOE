@@ -137,6 +137,7 @@ namespace Aula4
             var dt = new DataTable();
             sqlAd.Fill(dt);
             dataGridView.DataSource = dt;
+            con.Close();
         }
 
         private void consulta_Enter(object sender, EventArgs e)
@@ -247,5 +248,6 @@ namespace Aula4
             cmd.Prepare();
             cmd.ExecuteNonQuery();
         }
+
     }
 }

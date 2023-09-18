@@ -39,5 +39,26 @@ namespace Aula4
             formCadCurso.MdiParent = this;
             formCadCurso.Show();
         }
+
+        private void relatorioDeAlunosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormRelatorioAluno formRelatorioAluno = new FormRelatorioAluno();
+            formRelatorioAluno.MdiParent = this;
+            formRelatorioAluno.Show();
+        }
+
+        private void relatorioDeProfessoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormRelatorioProfessor formRelatorioProfessor = new FormRelatorioProfessor();
+            formRelatorioProfessor.MdiParent = this;
+            formRelatorioProfessor.Show();
+        }
+
+        private void relatorioDeCursosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormRelatorioCursos formRelatorioCursos = new FormRelatorioCursos();
+            formRelatorioCursos.MdiParent = this;
+            formRelatorioCursos.Show();
+        }
     }
 }

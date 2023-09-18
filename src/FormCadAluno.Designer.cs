@@ -31,6 +31,8 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadAluno));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             TabControl1 = new ReaLTaiizor.Controls.MaterialTabControl();
             cadastro = new TabPage();
             id = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
@@ -68,7 +70,7 @@
             TabControl1.Multiline = true;
             TabControl1.Name = "TabControl1";
             TabControl1.SelectedIndex = 0;
-            TabControl1.Size = new Size(800, 683);
+            TabControl1.Size = new Size(902, 683);
             TabControl1.SizeMode = TabSizeMode.FillToRight;
             TabControl1.TabIndex = 0;
             // 
@@ -90,7 +92,7 @@
             cadastro.Location = new Point(4, 31);
             cadastro.Name = "cadastro";
             cadastro.Padding = new Padding(3);
-            cadastro.Size = new Size(792, 648);
+            cadastro.Size = new Size(894, 648);
             cadastro.TabIndex = 0;
             cadastro.Text = "Cadastro";
             cadastro.UseVisualStyleBackColor = true;
@@ -140,7 +142,7 @@
             btnCancelar.Name = "btnCancelar";
             btnCancelar.NoAccentTextColor = Color.Empty;
             btnCancelar.Size = new Size(96, 36);
-            btnCancelar.TabIndex = 12;
+            btnCancelar.TabIndex = 9;
             btnCancelar.Text = "Cancelar";
             btnCancelar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btnCancelar.UseAccentColor = false;
@@ -161,7 +163,7 @@
             btnSalvar.Name = "btnSalvar";
             btnSalvar.NoAccentTextColor = Color.Empty;
             btnSalvar.Size = new Size(76, 36);
-            btnSalvar.TabIndex = 11;
+            btnSalvar.TabIndex = 10;
             btnSalvar.Text = "Salvar";
             btnSalvar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btnSalvar.UseAccentColor = false;
@@ -202,7 +204,7 @@
             dtNascimento.ShortcutsEnabled = true;
             dtNascimento.Size = new Size(199, 48);
             dtNascimento.SkipLiterals = true;
-            dtNascimento.TabIndex = 1;
+            dtNascimento.TabIndex = 2;
             dtNascimento.TabStop = false;
             dtNascimento.Text = "  /  /";
             dtNascimento.TextAlign = HorizontalAlignment.Left;
@@ -260,7 +262,7 @@
             senha.SelectionStart = 0;
             senha.ShortcutsEnabled = true;
             senha.Size = new Size(640, 48);
-            senha.TabIndex = 7;
+            senha.TabIndex = 8;
             senha.TabStop = false;
             senha.TextAlign = HorizontalAlignment.Left;
             senha.TrailingIcon = null;
@@ -291,7 +293,7 @@
             cidade.SelectionStart = 0;
             cidade.ShortcutsEnabled = true;
             cidade.Size = new Size(434, 48);
-            cidade.TabIndex = 5;
+            cidade.TabIndex = 6;
             cidade.TabStop = false;
             cidade.TextAlign = HorizontalAlignment.Left;
             cidade.TrailingIcon = null;
@@ -322,7 +324,7 @@
             bairro.SelectionStart = 0;
             bairro.ShortcutsEnabled = true;
             bairro.Size = new Size(640, 48);
-            bairro.TabIndex = 4;
+            bairro.TabIndex = 5;
             bairro.TabStop = false;
             bairro.TextAlign = HorizontalAlignment.Left;
             bairro.TrailingIcon = null;
@@ -353,7 +355,7 @@
             endereco.SelectionStart = 0;
             endereco.ShortcutsEnabled = true;
             endereco.Size = new Size(640, 48);
-            endereco.TabIndex = 3;
+            endereco.TabIndex = 4;
             endereco.TabStop = false;
             endereco.TextAlign = HorizontalAlignment.Left;
             endereco.TrailingIcon = null;
@@ -384,7 +386,7 @@
             nome.SelectionStart = 0;
             nome.ShortcutsEnabled = true;
             nome.Size = new Size(640, 48);
-            nome.TabIndex = 0;
+            nome.TabIndex = 3;
             nome.TabStop = false;
             nome.TextAlign = HorizontalAlignment.Left;
             nome.TrailingIcon = null;
@@ -432,7 +434,7 @@
             consulta.Location = new Point(4, 31);
             consulta.Name = "consulta";
             consulta.Padding = new Padding(3);
-            consulta.Size = new Size(792, 648);
+            consulta.Size = new Size(894, 648);
             consulta.TabIndex = 1;
             consulta.Text = "Consulta";
             consulta.UseVisualStyleBackColor = true;
@@ -442,26 +444,35 @@
             // 
             dataGridView.AllowUserToAddRows = false;
             dataGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Silver;
+            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
+            dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridView.BackgroundColor = SystemColors.ControlLight;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.ControlLightLight;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.Desktop;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.ButtonShadow;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Desktop;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dataGridView.DefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView.Dock = DockStyle.Top;
-            dataGridView.GridColor = SystemColors.ControlLightLight;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.Desktop;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.Location = new Point(3, 3);
             dataGridView.MultiSelect = false;
             dataGridView.Name = "dataGridView";
             dataGridView.ReadOnly = true;
             dataGridView.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = Color.Silver;
+            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
+            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView.RowTemplate.Height = 29;
             dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView.Size = new Size(786, 594);
+            dataGridView.Size = new Size(853, 578);
+            dataGridView.StandardTab = true;
             dataGridView.TabIndex = 4;
             // 
             // btnNovo
@@ -539,7 +550,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(806, 750);
+            ClientSize = new Size(908, 750);
             Controls.Add(TabControl1);
             DrawerShowIconsWhenHidden = true;
             DrawerTabControl = TabControl1;
@@ -574,7 +585,7 @@
         private ReaLTaiizor.Controls.MaterialButton btnNovo;
         private ReaLTaiizor.Controls.MaterialButton btnExcluir;
         private ReaLTaiizor.Controls.MaterialButton btnEditar;
-        private DataGridView dataGridView;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit id;
+        private DataGridView dataGridView;
     }
 }

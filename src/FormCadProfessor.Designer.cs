@@ -30,6 +30,8 @@
         {
             components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadProfessor));
             TabControl1 = new ReaLTaiizor.Controls.MaterialTabControl();
             cadastro = new TabPage();
@@ -119,7 +121,7 @@
             cbtitulacao.Name = "cbtitulacao";
             cbtitulacao.Size = new Size(252, 49);
             cbtitulacao.StartIndex = 0;
-            cbtitulacao.TabIndex = 15;
+            cbtitulacao.TabIndex = 5;
             // 
             // areaFormacao
             // 
@@ -146,7 +148,7 @@
             areaFormacao.SelectionStart = 0;
             areaFormacao.ShortcutsEnabled = true;
             areaFormacao.Size = new Size(355, 48);
-            areaFormacao.TabIndex = 14;
+            areaFormacao.TabIndex = 4;
             areaFormacao.TabStop = false;
             areaFormacao.TextAlign = HorizontalAlignment.Left;
             areaFormacao.TrailingIcon = null;
@@ -197,7 +199,7 @@
             btnCancelar.Name = "btnCancelar";
             btnCancelar.NoAccentTextColor = Color.Empty;
             btnCancelar.Size = new Size(96, 36);
-            btnCancelar.TabIndex = 12;
+            btnCancelar.TabIndex = 10;
             btnCancelar.Text = "Cancelar";
             btnCancelar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btnCancelar.UseAccentColor = false;
@@ -259,7 +261,7 @@
             dtNascimento.ShortcutsEnabled = true;
             dtNascimento.Size = new Size(199, 48);
             dtNascimento.SkipLiterals = true;
-            dtNascimento.TabIndex = 1;
+            dtNascimento.TabIndex = 2;
             dtNascimento.TabStop = false;
             dtNascimento.Text = "  /  /";
             dtNascimento.TextAlign = HorizontalAlignment.Left;
@@ -290,7 +292,7 @@
             cbEstado.Name = "cbEstado";
             cbEstado.Size = new Size(151, 49);
             cbEstado.StartIndex = 0;
-            cbEstado.TabIndex = 7;
+            cbEstado.TabIndex = 9;
             // 
             // cidade
             // 
@@ -317,7 +319,7 @@
             cidade.SelectionStart = 0;
             cidade.ShortcutsEnabled = true;
             cidade.Size = new Size(434, 48);
-            cidade.TabIndex = 5;
+            cidade.TabIndex = 8;
             cidade.TabStop = false;
             cidade.TextAlign = HorizontalAlignment.Left;
             cidade.TrailingIcon = null;
@@ -348,7 +350,7 @@
             bairro.SelectionStart = 0;
             bairro.ShortcutsEnabled = true;
             bairro.Size = new Size(640, 48);
-            bairro.TabIndex = 4;
+            bairro.TabIndex = 7;
             bairro.TabStop = false;
             bairro.TextAlign = HorizontalAlignment.Left;
             bairro.TrailingIcon = null;
@@ -379,7 +381,7 @@
             endereco.SelectionStart = 0;
             endereco.ShortcutsEnabled = true;
             endereco.Size = new Size(640, 48);
-            endereco.TabIndex = 3;
+            endereco.TabIndex = 6;
             endereco.TabStop = false;
             endereco.TextAlign = HorizontalAlignment.Left;
             endereco.TrailingIcon = null;
@@ -410,7 +412,7 @@
             nome.SelectionStart = 0;
             nome.ShortcutsEnabled = true;
             nome.Size = new Size(640, 48);
-            nome.TabIndex = 0;
+            nome.TabIndex = 3;
             nome.TabStop = false;
             nome.TextAlign = HorizontalAlignment.Left;
             nome.TrailingIcon = null;
@@ -468,16 +470,23 @@
             // 
             dataGridView.AllowUserToAddRows = false;
             dataGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Silver;
+            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
+            dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView.BackgroundColor = SystemColors.ControlLight;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.ControlLightLight;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.Desktop;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.ButtonShadow;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Desktop;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dataGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.ControlLightLight;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.Desktop;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.Dock = DockStyle.Top;
             dataGridView.GridColor = SystemColors.ControlLightLight;
             dataGridView.Location = new Point(3, 3);
@@ -485,6 +494,11 @@
             dataGridView.Name = "dataGridView";
             dataGridView.ReadOnly = true;
             dataGridView.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = Color.Silver;
+            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
+            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView.RowTemplate.Height = 29;
             dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView.Size = new Size(786, 594);
