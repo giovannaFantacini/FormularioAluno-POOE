@@ -1,7 +1,7 @@
 
 # Projeto Formulário
 
-### O objetivo do projeto é criar um sistema de cadastro de alunos, cadastro de professor e cadastro de cursos, 
+### O objetivo do projeto é criar um sistema de cadastro de alunos, cadastro de professor e cadastro de cursos, além dessas funcionalidades, também é possível gerar relatórios com filtros para cada uma das entidades.
 ### O Cadastro do aluno contem as seguintes funcionalidades: 
 
  - Inserir novo aluno
